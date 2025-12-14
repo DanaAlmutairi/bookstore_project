@@ -1,0 +1,52 @@
+### LOGIN (get JWT token)
+POST http://127.0.0.1:8000/auth/jwt/create/
+Content-Type: application/json
+
+{
+    "username": "dana",
+    "password": "dana2004"
+}
+
+### GET CART (Authenticated request)
+GET http://127.0.0.1:8000/api/cart/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY1NjI3Njk0LCJpYXQiOjE3NjU2MjU4OTQsImp0aSI6IjJmNWI3MjAwOTc5MzQ0ZTdiMzc0YTRkY2Y5ZGMzNzVkIiwidXNlcl9pZCI6IjEifQ.ny2JsEGA7ZZa4EyE085f9sHt3SUu2On0kOcazY_rD5Q
+
+### ADD ITEM TO CART
+POST http://127.0.0.1:8000/api/cart/add/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY1NjI3Njk0LCJpYXQiOjE3NjU2MjU4OTQsImp0aSI6IjJmNWI3MjAwOTc5MzQ0ZTdiMzc0YTRkY2Y5ZGMzNzVkIiwidXNlcl9pZCI6IjEifQ.ny2JsEGA7ZZa4EyE085f9sHt3SUu2On0kOcazY_rD5Q
+
+{
+"book_id": 2,
+"quantity": 2
+}
+
+### GET CART (Authenticated request)
+GET http://127.0.0.1:8000/api/cart/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY1NjI3Njk0LCJpYXQiOjE3NjU2MjU4OTQsImp0aSI6IjJmNWI3MjAwOTc5MzQ0ZTdiMzc0YTRkY2Y5ZGMzNzVkIiwidXNlcl9pZCI6IjEifQ.ny2JsEGA7ZZa4EyE085f9sHt3SUu2On0kOcazY_rD5Q
+
+### CREATE ORDER (Checkout)
+POST http://127.0.0.1:8000/api/orders/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY1NjI3Njk0LCJpYXQiOjE3NjU2MjU4OTQsImp0aSI6IjJmNWI3MjAwOTc5MzQ0ZTdiMzc0YTRkY2Y5ZGMzNzVkIiwidXNlcl9pZCI6IjEifQ.ny2JsEGA7ZZa4EyE085f9sHt3SUu2On0kOcazY_rD5Q
+
+### LIST ORDERS (Order history)
+GET http://127.0.0.1:8000/api/orders/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY1NjI3Njk0LCJpYXQiOjE3NjU2MjU4OTQsImp0aSI6IjJmNWI3MjAwOTc5MzQ0ZTdiMzc0YTRkY2Y5ZGMzNzVkIiwidXNlcl9pZCI6IjEifQ.ny2JsEGA7ZZa4EyE085f9sHt3SUu2On0kOcazY_rD5Q
+
+
+### ADD REVIEW 
+POST http://127.0.0.1:8000/api/books/reviews/add/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY1NjI4MjMzLCJpYXQiOjE3NjU2MjY0MzMsImp0aSI6ImM5N2FiZDc5NGIxZTRiMmM5OTRhNmRiYzRhNjlmMWI1IiwidXNlcl9pZCI6IjEifQ.sT5aC1tq4scBUmzVysbfY3TNXhDfhZAUREnOiGECEEw
+
+{
+"book_id": 3,
+"rating": 4,
+"comment": "Great book loved every chapter!"
+}
+
+### GET REVIEW
+GET http://127.0.0.1:8000/api/books/reviews/3/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY1NjI4MjMzLCJpYXQiOjE3NjU2MjY0MzMsImp0aSI6ImM5N2FiZDc5NGIxZTRiMmM5OTRhNmRiYzRhNjlmMWI1IiwidXNlcl9pZCI6IjEifQ.sT5aC1tq4scBUmzVysbfY3TNXhDfhZAUREnOiGECEEw 
+ 
+
