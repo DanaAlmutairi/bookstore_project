@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 import os
+import dj_database_url
 from pathlib import Path
 
 
@@ -106,14 +107,9 @@ SIMPLE_JWT = {
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bookstore_db',
-        'USER': 'postgres',
-        'PASSWORD': 'dana2004',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+       default=os.environ.get("DATABASE_URL")
+       )
 }
 
 
